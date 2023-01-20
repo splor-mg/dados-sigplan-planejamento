@@ -1,0 +1,30 @@
+{
+  "valid": true,
+  "stats": {
+    "tasks": 1,
+    "warnings": 0,
+    "errors": 0,
+    "seconds": 0.155
+  },
+  "warnings": [],
+  "errors": [],
+  "tasks": [
+    {
+      "valid": true,
+      "name": "indicadores_planejamento",
+      "type": "file",
+      "place": "data/raw/indicadores_planejamento.txt",
+      "labels": [],
+      "stats": {
+        "md5": "5f03df400b9346a6304eba7471a7a7a5",
+        "sha256": "0cfc8731bf2c1a2e960ae9000f5aefbe105d6f6eb3c0b76ee83f2ee55ebef90d",
+        "bytes": 113073,
+        "warnings": 0,
+        "errors": 0,
+        "seconds": 0.155
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

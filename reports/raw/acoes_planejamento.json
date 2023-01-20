@@ -1,0 +1,30 @@
+{
+  "valid": true,
+  "stats": {
+    "tasks": 1,
+    "warnings": 0,
+    "errors": 0,
+    "seconds": 0.129
+  },
+  "warnings": [],
+  "errors": [],
+  "tasks": [
+    {
+      "valid": true,
+      "name": "acoes_planejamento",
+      "type": "file",
+      "place": "data/raw/acoes_planejamento.txt",
+      "labels": [],
+      "stats": {
+        "md5": "ef5a304b76aad60669d4103fa7c677b9",
+        "sha256": "0369ad3a52ea63f9356ed94351a7fa32fed3743156419c81336c1c41076d8479",
+        "bytes": 1904740,
+        "warnings": 0,
+        "errors": 0,
+        "seconds": 0.129
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}
