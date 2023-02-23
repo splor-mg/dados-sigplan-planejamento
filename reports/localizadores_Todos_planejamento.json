@@ -1,0 +1,21 @@
+{
+  "valid": false,
+  "stats": {
+    "tasks": 0,
+    "warnings": 0,
+    "errors": 1,
+    "seconds": 0.328
+  },
+  "warnings": [],
+  "errors": [
+    {
+      "type": "package-error",
+      "title": "Package Error",
+      "description": "A validation cannot be processed.",
+      "message": "The data package has an error: resource \"localizadores_Todos_planejamento\" does not exist",
+      "tags": [],
+      "note": "resource \"localizadores_Todos_planejamento\" does not exist"
+    }
+  ],
+  "tasks": []
+}
