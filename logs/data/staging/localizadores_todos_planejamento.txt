@@ -1,0 +1,1941 @@
+2023-06-15T09:29:03-0300 INFO  [__main__] Geração de arquivo texto para localizadores_todos_planejamento. Aguarde esse processamento pode ser um pouco demorado!
+╭─────────────────────────────── Traceback (most recent call last) ────────────────────────────────╮
+│ /Users/fjunior/Projects/splor/ppag2023-dadosmg/scripts/extract.py:55 in main                     │
+│                                                                                                  │
+│   52 │   │   │   shutil.copyfileobj(source.byte_stream, fs)                                      │
+│   53                                                                                             │
+│   54 def main(resource_name: str, descriptor: str = 'datapackage.yaml'):                         │
+│ ❱ 55 │   extract(resource_name, descriptor)                                                      │
+│   56                                                                                             │
+│   57 if __name__ == '__main__':                                                                  │
+│   58 │   LOG_FORMAT = '%(asctime)s %(levelname)-5.5s [%(name)s] %(message)s'                     │
+│                                                                                                  │
+│ ╭────────────────────── locals ──────────────────────╮                                           │
+│ │    descriptor = 'datapackage.yaml'                 │                                           │
+│ │ resource_name = 'localizadores_todos_planejamento' │                                           │
+│ ╰────────────────────────────────────────────────────╯                                           │
+│                                                                                                  │
+│ /Users/fjunior/Projects/splor/ppag2023-dadosmg/scripts/extract.py:26 in extract                  │
+│                                                                                                  │
+│   23 │   │   res = requests.get(source.custom['link']) # Resource is stripping url property      │
+│   24 │   │   res.raise_for_status()                                                              │
+│   25 │   │   if 'gerado com sucesso!' not in res.text:                                           │
+│ ❱ 26 │   │   │   raise Exception                                                                 │
+│   27 │   │                                                                                       │
+│   28 │   │   soup = BeautifulSoup(res.text, 'html.parser')                                       │
+│   29                                                                                             │
+│                                                                                                  │
+│ ╭─────────────────────────────────────────── locals ───────────────────────────────────────────╮ │
+│ │    descriptor = 'datapackage.yaml'                                                           │ │
+│ │       package = Package(                                                                     │ │
+│ │                 │   source=None,                                                             │ │
+│ │                 │   control=None,                                                            │ │
+│ │                 │   _basepath='',                                                            │ │
+│ │                 │   name='ppag2023-dadosmg',                                                 │ │
+│ │                 │   title=None,                                                              │ │
+│ │                 │   description=None,                                                        │ │
+│ │                 │   homepage=None,                                                           │ │
+│ │                 │   profile=None,                                                            │ │
+│ │                 │   licenses=[],                                                             │ │
+│ │                 │   sources=[],                                                              │ │
+│ │                 │   contributors=[],                                                         │ │
+│ │                 │   keywords=[],                                                             │ │
+│ │                 │   image=None,                                                              │ │
+│ │                 │   version=None,                                                            │ │
+│ │                 │   created=None,                                                            │ │
+│ │                 │   resources=[                                                              │ │
+│ │                 │   │   TableResource(                                                       │ │
+│ │                 │   │   │   source=None,                                                     │ │
+│ │                 │   │   │   control=None,                                                    │ │
+│ │                 │   │   │   packagify=False,                                                 │ │
+│ │                 │   │   │   _name='acoes_planejamento',                                      │ │
+│ │                 │   │   │   title=None,                                                      │ │
+│ │                 │   │   │   description=None,                                                │ │
+│ │                 │   │   │   homepage=None,                                                   │ │
+│ │                 │   │   │   profile=None,                                                    │ │
+│ │                 │   │   │   licenses=[],                                                     │ │
+│ │                 │   │   │   sources=[                                                        │ │
+│ │                 │   │   │   │   {                                                            │ │
+│ │                 │   │   │   │   │   'name': 'acoes_planejamento',                            │ │
+│ │                 │   │   │   │   │   'title': 'Relatórios e Bases do Planejamento - Ações',   │ │
+│ │                 │   │   │   │   │   'path':                                                  │ │
+│ │                 'https://www.sigplan.mg.gov.br/BasesTxt/acoes_planejamento.txt',             │ │
+│ │                 │   │   │   │   │   'link':                                                  │ │
+│ │                 'https://www.sigplan.mg.gov.br/v4/Relatorios/base_programas_planejamento.as… │ │
+│ │                 │   │   │   │   │   'staging': 'data/staging/acoes_planejamento.txt',        │ │
+│ │                 │   │   │   │   │   'format': 'csv',                                         │ │
+│ │                 │   │   │   │   │   'encoding': 'windows-1252',                              │ │
+│ │                 │   │   │   │   │   'dialect': {'csv': {'delimiter': '|'}},                  │ │
+│ │                 │   │   │   │   │   'schema': 'schemas/raw/acoes_planejamento.yaml'          │ │
+│ │                 │   │   │   │   }                                                            │ │
+│ │                 │   │   │   ],                                                               │ │
+│ │                 │   │   │   path='data/acoes_planejamento.csv',                              │ │
+│ │                 │   │   │   data=None,                                                       │ │
+│ │                 │   │   │   scheme='file',                                                   │ │
+│ │                 │   │   │   format='csv',                                                    │ │
+│ │                 │   │   │   _datatype='',                                                    │ │
+│ │                 │   │   │   mediatype='text/csv',                                            │ │
+│ │                 │   │   │   compression=None,                                                │ │
+│ │                 │   │   │   extrapaths=[],                                                   │ │
+│ │                 │   │   │   innerpath=None,                                                  │ │
+│ │                 │   │   │   encoding=None,                                                   │ │
+│ │                 │   │   │   hash=None,                                                       │ │
+│ │                 │   │   │   bytes=None,                                                      │ │
+│ │                 │   │   │   fields=None,                                                     │ │
+│ │                 │   │   │   rows=None,                                                       │ │
+│ │                 │   │   │   _dialect=Dialect(                                                │ │
+│ │                 │   │   │   │   descriptor=None,                                             │ │
+│ │                 │   │   │   │   name=None,                                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   header=True,                                                 │ │
+│ │                 │   │   │   │   header_rows=[1],                                             │ │
+│ │                 │   │   │   │   header_join=' ',                                             │ │
+│ │                 │   │   │   │   header_case=True,                                            │ │
+│ │                 │   │   │   │   comment_char=None,                                           │ │
+│ │                 │   │   │   │   comment_rows=[],                                             │ │
+│ │                 │   │   │   │   skip_blank_rows=False,                                       │ │
+│ │                 │   │   │   │   controls=[]                                                  │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   _schema=Schema(                                                  │ │
+│ │                 │   │   │   │   descriptor=None,                                             │ │
+│ │                 │   │   │   │   name=None,                                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   fields=[                                                     │ │
+│ │                 │   │   │   │   │   IntegerField(                                            │ │
+│ │                 │   │   │   │   │   │   name='codigo_do_programa',                           │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   bare_number=True                                     │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='nome_do_programa',                             │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='codigo_da_area_tematica',                      │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='area_tematica',                                │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='exclusao_logica_do_programa',                  │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='programa_novo',                                │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │                                                        │ │
+│ │                 name='justificativa_de_inclusao_ou_exclusao_do_programa',                    │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   IntegerField(                                            │ │
+│ │                 │   │   │   │   │   │                                                        │ │
+│ │                 name='codigo_da_unidade_orcamentaria_responsavel_pelo_programa',             │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   bare_number=True                                     │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │                                                        │ │
+│ │                 name='unidade_orcamentaria_responsavel_pelo_programa',                       │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   IntegerField(                                            │ │
+│ │                 │   │   │   │   │   │                                                        │ │
+│ │                 name='codigo_da_unidade_orcamentaria_responsavel_pela_acao',                 │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   bare_number=True                                     │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   ... +38                                                  │ │
+│ │                 │   │   │   │   ],                                                           │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   primary_key=[],                                              │ │
+│ │                 │   │   │   │   foreign_keys=[]                                              │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   _basepath='',                                                    │ │
+│ │                 │   │   │   detector=Detector(                                               │ │
+│ │                 │   │   │   │   buffer_size=10000,                                           │ │
+│ │                 │   │   │   │   sample_size=100,                                             │ │
+│ │                 │   │   │   │   encoding_function=None,                                      │ │
+│ │                 │   │   │   │   encoding_confidence=0.5,                                     │ │
+│ │                 │   │   │   │   field_type=None,                                             │ │
+│ │                 │   │   │   │   field_names=None,                                            │ │
+│ │                 │   │   │   │   field_confidence=0.9,                                        │ │
+│ │                 │   │   │   │   field_float_numbers=False,                                   │ │
+│ │                 │   │   │   │   field_missing_values=[''],                                   │ │
+│ │                 │   │   │   │   field_true_values=['true', 'True', 'TRUE', '1'],             │ │
+│ │                 │   │   │   │   field_false_values=['false', 'False', 'FALSE', '0'],         │ │
+│ │                 │   │   │   │   schema_sync=False,                                           │ │
+│ │                 │   │   │   │   schema_patch=None                                            │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   package=...,                                                     │ │
+│ │                 │   │   │   stats=ResourceStats(                                             │ │
+│ │                 │   │   │   │   md5=None,                                                    │ │
+│ │                 │   │   │   │   sha256=None,                                                 │ │
+│ │                 │   │   │   │   bytes=None,                                                  │ │
+│ │                 │   │   │   │   fields=None,                                                 │ │
+│ │                 │   │   │   │   rows=None                                                    │ │
+│ │                 │   │   │   )                                                                │ │
+│ │                 │   │   ),                                                                   │ │
+│ │                 │   │   TableResource(                                                       │ │
+│ │                 │   │   │   source=None,                                                     │ │
+│ │                 │   │   │   control=None,                                                    │ │
+│ │                 │   │   │   packagify=False,                                                 │ │
+│ │                 │   │   │   _name='indicadores_planejamento',                                │ │
+│ │                 │   │   │   title=None,                                                      │ │
+│ │                 │   │   │   description=None,                                                │ │
+│ │                 │   │   │   homepage=None,                                                   │ │
+│ │                 │   │   │   profile=None,                                                    │ │
+│ │                 │   │   │   licenses=[],                                                     │ │
+│ │                 │   │   │   sources=[                                                        │ │
+│ │                 │   │   │   │   {                                                            │ │
+│ │                 │   │   │   │   │   'name': 'indicadores_planejamento',                      │ │
+│ │                 │   │   │   │   │   'title': 'Relatórios e Bases do Planejamento -           │ │
+│ │                 Indicadores',                                                                │ │
+│ │                 │   │   │   │   │   'path':                                                  │ │
+│ │                 'https://www.sigplan.mg.gov.br/BasesTxt/indicadores_planejamento.txt',       │ │
+│ │                 │   │   │   │   │   'link':                                                  │ │
+│ │                 'https://www.sigplan.mg.gov.br/v4/Relatorios/base_indicadores_planejamento.… │ │
+│ │                 │   │   │   │   │   'staging': 'data/staging/indicadores_planejamento.txt',  │ │
+│ │                 │   │   │   │   │   'format': 'csv',                                         │ │
+│ │                 │   │   │   │   │   'encoding': 'windows-1252',                              │ │
+│ │                 │   │   │   │   │   'dialect': {'csv': {'delimiter': '|'}},                  │ │
+│ │                 │   │   │   │   │   'schema': 'schemas/raw/indicadores_planejamento.yaml'    │ │
+│ │                 │   │   │   │   }                                                            │ │
+│ │                 │   │   │   ],                                                               │ │
+│ │                 │   │   │   path='data/indicadores_planejamento.csv',                        │ │
+│ │                 │   │   │   data=None,                                                       │ │
+│ │                 │   │   │   scheme='file',                                                   │ │
+│ │                 │   │   │   format='csv',                                                    │ │
+│ │                 │   │   │   _datatype='',                                                    │ │
+│ │                 │   │   │   mediatype='text/csv',                                            │ │
+│ │                 │   │   │   compression=None,                                                │ │
+│ │                 │   │   │   extrapaths=[],                                                   │ │
+│ │                 │   │   │   innerpath=None,                                                  │ │
+│ │                 │   │   │   encoding=None,                                                   │ │
+│ │                 │   │   │   hash=None,                                                       │ │
+│ │                 │   │   │   bytes=None,                                                      │ │
+│ │                 │   │   │   fields=None,                                                     │ │
+│ │                 │   │   │   rows=None,                                                       │ │
+│ │                 │   │   │   _dialect=Dialect(                                                │ │
+│ │                 │   │   │   │   descriptor=None,                                             │ │
+│ │                 │   │   │   │   name=None,                                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   header=True,                                                 │ │
+│ │                 │   │   │   │   header_rows=[1],                                             │ │
+│ │                 │   │   │   │   header_join=' ',                                             │ │
+│ │                 │   │   │   │   header_case=True,                                            │ │
+│ │                 │   │   │   │   comment_char=None,                                           │ │
+│ │                 │   │   │   │   comment_rows=[],                                             │ │
+│ │                 │   │   │   │   skip_blank_rows=False,                                       │ │
+│ │                 │   │   │   │   controls=[]                                                  │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   _schema=Schema(                                                  │ │
+│ │                 │   │   │   │   descriptor=None,                                             │ │
+│ │                 │   │   │   │   name=None,                                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   fields=[                                                     │ │
+│ │                 │   │   │   │   │   IntegerField(                                            │ │
+│ │                 │   │   │   │   │   │   name='codigo_do_programa',                           │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   bare_number=True                                     │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='nome_do_programa',                             │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   BooleanField(                                            │ │
+│ │                 │   │   │   │   │   │   name='exclusao_logica_do_programa',                  │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   true_values=['true', 'True', 'TRUE', '1'],           │ │
+│ │                 │   │   │   │   │   │   false_values=['false', 'False', 'FALSE', '0']        │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='indicador',                                    │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   BooleanField(                                            │ │
+│ │                 │   │   │   │   │   │   name='exclusao_logica_do_indicador',                 │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   true_values=['true', 'True', 'TRUE', '1'],           │ │
+│ │                 │   │   │   │   │   │   false_values=['false', 'False', 'FALSE', '0']        │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='unidade_de_medida',                            │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='indice_de_referencia',                         │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='em_apuracao_indice_de_referencia',             │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='data_de_apuracao',                             │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='previsao_para_2023',                           │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   ... +16                                                  │ │
+│ │                 │   │   │   │   ],                                                           │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   primary_key=[],                                              │ │
+│ │                 │   │   │   │   foreign_keys=[]                                              │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   _basepath='',                                                    │ │
+│ │                 │   │   │   detector=Detector(                                               │ │
+│ │                 │   │   │   │   buffer_size=10000,                                           │ │
+│ │                 │   │   │   │   sample_size=100,                                             │ │
+│ │                 │   │   │   │   encoding_function=None,                                      │ │
+│ │                 │   │   │   │   encoding_confidence=0.5,                                     │ │
+│ │                 │   │   │   │   field_type=None,                                             │ │
+│ │                 │   │   │   │   field_names=None,                                            │ │
+│ │                 │   │   │   │   field_confidence=0.9,                                        │ │
+│ │                 │   │   │   │   field_float_numbers=False,                                   │ │
+│ │                 │   │   │   │   field_missing_values=[''],                                   │ │
+│ │                 │   │   │   │   field_true_values=['true', 'True', 'TRUE', '1'],             │ │
+│ │                 │   │   │   │   field_false_values=['false', 'False', 'FALSE', '0'],         │ │
+│ │                 │   │   │   │   schema_sync=False,                                           │ │
+│ │                 │   │   │   │   schema_patch=None                                            │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   package=...,                                                     │ │
+│ │                 │   │   │   stats=ResourceStats(                                             │ │
+│ │                 │   │   │   │   md5=None,                                                    │ │
+│ │                 │   │   │   │   sha256=None,                                                 │ │
+│ │                 │   │   │   │   bytes=None,                                                  │ │
+│ │                 │   │   │   │   fields=None,                                                 │ │
+│ │                 │   │   │   │   rows=None                                                    │ │
+│ │                 │   │   │   )                                                                │ │
+│ │                 │   │   ),                                                                   │ │
+│ │                 │   │   TableResource(                                                       │ │
+│ │                 │   │   │   source=None,                                                     │ │
+│ │                 │   │   │   control=None,                                                    │ │
+│ │                 │   │   │   packagify=False,                                                 │ │
+│ │                 │   │   │   _name='localizadores_todos_planejamento',                        │ │
+│ │                 │   │   │   title=None,                                                      │ │
+│ │                 │   │   │   description=None,                                                │ │
+│ │                 │   │   │   homepage=None,                                                   │ │
+│ │                 │   │   │   profile=None,                                                    │ │
+│ │                 │   │   │   licenses=[],                                                     │ │
+│ │                 │   │   │   sources=[                                                        │ │
+│ │                 │   │   │   │   {                                                            │ │
+│ │                 │   │   │   │   │   'name': 'localizadores_todos_planejamento',              │ │
+│ │                 │   │   │   │   │   'title': 'Relatórios e Bases do Planejamento -           │ │
+│ │                 Localizadores (Todos)',                                                      │ │
+│ │                 │   │   │   │   │   'path':                                                  │ │
+│ │                 'https://www.sigplan.mg.gov.br/BasesTxt/localizadores_Todos_planejamento.tx… │ │
+│ │                 │   │   │   │   │   'link':                                                  │ │
+│ │                 'https://www.sigplan.mg.gov.br/v4/Relatorios/base_localizadores_planejament… │ │
+│ │                 │   │   │   │   │   'staging':                                               │ │
+│ │                 'data/staging/localizadores_todos_planejamento.txt',                         │ │
+│ │                 │   │   │   │   │   'format': 'csv',                                         │ │
+│ │                 │   │   │   │   │   'encoding': 'windows-1252',                              │ │
+│ │                 │   │   │   │   │   'dialect': {'csv': {'delimiter': '|'}},                  │ │
+│ │                 │   │   │   │   │   'schema':                                                │ │
+│ │                 'schemas/raw/localizadores_todos_planejamento.yaml'                          │ │
+│ │                 │   │   │   │   }                                                            │ │
+│ │                 │   │   │   ],                                                               │ │
+│ │                 │   │   │   path='data/localizadores_todos_planejamento.csv',                │ │
+│ │                 │   │   │   data=None,                                                       │ │
+│ │                 │   │   │   scheme='file',                                                   │ │
+│ │                 │   │   │   format='csv',                                                    │ │
+│ │                 │   │   │   _datatype='',                                                    │ │
+│ │                 │   │   │   mediatype='text/csv',                                            │ │
+│ │                 │   │   │   compression=None,                                                │ │
+│ │                 │   │   │   extrapaths=[],                                                   │ │
+│ │                 │   │   │   innerpath=None,                                                  │ │
+│ │                 │   │   │   encoding=None,                                                   │ │
+│ │                 │   │   │   hash=None,                                                       │ │
+│ │                 │   │   │   bytes=None,                                                      │ │
+│ │                 │   │   │   fields=None,                                                     │ │
+│ │                 │   │   │   rows=None,                                                       │ │
+│ │                 │   │   │   _dialect=Dialect(                                                │ │
+│ │                 │   │   │   │   descriptor=None,                                             │ │
+│ │                 │   │   │   │   name=None,                                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   header=True,                                                 │ │
+│ │                 │   │   │   │   header_rows=[1],                                             │ │
+│ │                 │   │   │   │   header_join=' ',                                             │ │
+│ │                 │   │   │   │   header_case=True,                                            │ │
+│ │                 │   │   │   │   comment_char=None,                                           │ │
+│ │                 │   │   │   │   comment_rows=[],                                             │ │
+│ │                 │   │   │   │   skip_blank_rows=False,                                       │ │
+│ │                 │   │   │   │   controls=[]                                                  │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   _schema=Schema(                                                  │ │
+│ │                 │   │   │   │   descriptor=None,                                             │ │
+│ │                 │   │   │   │   name=None,                                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   fields=[                                                     │ │
+│ │                 │   │   │   │   │   IntegerField(                                            │ │
+│ │                 │   │   │   │   │   │   name='codigo_do_programa',                           │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   bare_number=True                                     │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='nome_do_programa',                             │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='codigo_da_area_tematica',                      │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='area_tematica',                                │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   BooleanField(                                            │ │
+│ │                 │   │   │   │   │   │   name='exclusao_logica_do_programa',                  │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   true_values=['true', 'True', 'TRUE', '1'],           │ │
+│ │                 │   │   │   │   │   │   false_values=['false', 'False', 'FALSE', '0']        │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   IntegerField(                                            │ │
+│ │                 │   │   │   │   │   │   name='codigo_da_acao',                               │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   bare_number=True                                     │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='titulo_da_acao',                               │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   IntegerField(                                            │ │
+│ │                 │   │   │   │   │   │                                                        │ │
+│ │                 name='codigo_do_identificador_de_acao_governamental_iag',                    │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   bare_number=True                                     │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='identificador_de_acao_governamental_iag',      │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='codigo_do_projeto_estrategico',                │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   ... +23                                                  │ │
+│ │                 │   │   │   │   ],                                                           │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   primary_key=[],                                              │ │
+│ │                 │   │   │   │   foreign_keys=[]                                              │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   _basepath='',                                                    │ │
+│ │                 │   │   │   detector=Detector(                                               │ │
+│ │                 │   │   │   │   buffer_size=10000,                                           │ │
+│ │                 │   │   │   │   sample_size=100,                                             │ │
+│ │                 │   │   │   │   encoding_function=None,                                      │ │
+│ │                 │   │   │   │   encoding_confidence=0.5,                                     │ │
+│ │                 │   │   │   │   field_type=None,                                             │ │
+│ │                 │   │   │   │   field_names=None,                                            │ │
+│ │                 │   │   │   │   field_confidence=0.9,                                        │ │
+│ │                 │   │   │   │   field_float_numbers=False,                                   │ │
+│ │                 │   │   │   │   field_missing_values=[''],                                   │ │
+│ │                 │   │   │   │   field_true_values=['true', 'True', 'TRUE', '1'],             │ │
+│ │                 │   │   │   │   field_false_values=['false', 'False', 'FALSE', '0'],         │ │
+│ │                 │   │   │   │   schema_sync=False,                                           │ │
+│ │                 │   │   │   │   schema_patch=None                                            │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   package=...,                                                     │ │
+│ │                 │   │   │   stats=ResourceStats(                                             │ │
+│ │                 │   │   │   │   md5=None,                                                    │ │
+│ │                 │   │   │   │   sha256=None,                                                 │ │
+│ │                 │   │   │   │   bytes=None,                                                  │ │
+│ │                 │   │   │   │   fields=None,                                                 │ │
+│ │                 │   │   │   │   rows=None                                                    │ │
+│ │                 │   │   │   )                                                                │ │
+│ │                 │   │   ),                                                                   │ │
+│ │                 │   │   TableResource(                                                       │ │
+│ │                 │   │   │   source=None,                                                     │ │
+│ │                 │   │   │   control=None,                                                    │ │
+│ │                 │   │   │   packagify=False,                                                 │ │
+│ │                 │   │   │   _name='programas_planejamento',                                  │ │
+│ │                 │   │   │   title=None,                                                      │ │
+│ │                 │   │   │   description=None,                                                │ │
+│ │                 │   │   │   homepage=None,                                                   │ │
+│ │                 │   │   │   profile=None,                                                    │ │
+│ │                 │   │   │   licenses=[],                                                     │ │
+│ │                 │   │   │   sources=[                                                        │ │
+│ │                 │   │   │   │   {                                                            │ │
+│ │                 │   │   │   │   │   'name': 'programas_planejamento',                        │ │
+│ │                 │   │   │   │   │   'title': 'Relatórios e Bases do Planejamento -           │ │
+│ │                 Programas',                                                                  │ │
+│ │                 │   │   │   │   │   'path':                                                  │ │
+│ │                 'https://www.sigplan.mg.gov.br/BasesTxt/programas_planejamento.txt',         │ │
+│ │                 │   │   │   │   │   'link':                                                  │ │
+│ │                 'https://www.sigplan.mg.gov.br/v4/Relatorios/base_programas_planejamento.as… │ │
+│ │                 │   │   │   │   │   'format': 'csv',                                         │ │
+│ │                 │   │   │   │   │   'staging': 'data/staging/programas_planejamento.txt',    │ │
+│ │                 │   │   │   │   │   'encoding': 'windows-1252',                              │ │
+│ │                 │   │   │   │   │   'dialect': {'csv': {'delimiter': '|'}},                  │ │
+│ │                 │   │   │   │   │   'schema': 'schemas/raw/programas_planejamento.yaml'      │ │
+│ │                 │   │   │   │   }                                                            │ │
+│ │                 │   │   │   ],                                                               │ │
+│ │                 │   │   │   path='data/programas_planejamento.csv',                          │ │
+│ │                 │   │   │   data=None,                                                       │ │
+│ │                 │   │   │   scheme='file',                                                   │ │
+│ │                 │   │   │   format='csv',                                                    │ │
+│ │                 │   │   │   _datatype='',                                                    │ │
+│ │                 │   │   │   mediatype='text/csv',                                            │ │
+│ │                 │   │   │   compression=None,                                                │ │
+│ │                 │   │   │   extrapaths=[],                                                   │ │
+│ │                 │   │   │   innerpath=None,                                                  │ │
+│ │                 │   │   │   encoding=None,                                                   │ │
+│ │                 │   │   │   hash=None,                                                       │ │
+│ │                 │   │   │   bytes=None,                                                      │ │
+│ │                 │   │   │   fields=None,                                                     │ │
+│ │                 │   │   │   rows=None,                                                       │ │
+│ │                 │   │   │   _dialect=Dialect(                                                │ │
+│ │                 │   │   │   │   descriptor=None,                                             │ │
+│ │                 │   │   │   │   name=None,                                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   header=True,                                                 │ │
+│ │                 │   │   │   │   header_rows=[1],                                             │ │
+│ │                 │   │   │   │   header_join=' ',                                             │ │
+│ │                 │   │   │   │   header_case=True,                                            │ │
+│ │                 │   │   │   │   comment_char=None,                                           │ │
+│ │                 │   │   │   │   comment_rows=[],                                             │ │
+│ │                 │   │   │   │   skip_blank_rows=False,                                       │ │
+│ │                 │   │   │   │   controls=[]                                                  │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   _schema=Schema(                                                  │ │
+│ │                 │   │   │   │   descriptor=None,                                             │ │
+│ │                 │   │   │   │   name=None,                                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   fields=[                                                     │ │
+│ │                 │   │   │   │   │   IntegerField(                                            │ │
+│ │                 │   │   │   │   │   │   name='codigo_do_programa',                           │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   bare_number=True                                     │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='nome_do_programa',                             │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='exclusao_logica_do_programa',                  │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='programa_novo',                                │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='codigo_da_area_tematica',                      │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='area_tematica',                                │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   IntegerField(                                            │ │
+│ │                 │   │   │   │   │   │   name='codigo_do_objetivo_estrategico',               │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...,                                          │ │
+│ │                 │   │   │   │   │   │   bare_number=True                                     │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='objetivo_estrategico',                         │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='codigo_da_diretriz_estrategica',               │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   StringField(                                             │ │
+│ │                 │   │   │   │   │   │   name='diretriz_estrategica',                         │ │
+│ │                 │   │   │   │   │   │   title=None,                                          │ │
+│ │                 │   │   │   │   │   │   description=None,                                    │ │
+│ │                 │   │   │   │   │   │   format='default',                                    │ │
+│ │                 │   │   │   │   │   │   missing_values=[''],                                 │ │
+│ │                 │   │   │   │   │   │   constraints={},                                      │ │
+│ │                 │   │   │   │   │   │   rdf_type=None,                                       │ │
+│ │                 │   │   │   │   │   │   example=None,                                        │ │
+│ │                 │   │   │   │   │   │   schema=...                                           │ │
+│ │                 │   │   │   │   │   ),                                                       │ │
+│ │                 │   │   │   │   │   ... +19                                                  │ │
+│ │                 │   │   │   │   ],                                                           │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   primary_key=[],                                              │ │
+│ │                 │   │   │   │   foreign_keys=[]                                              │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   _basepath='',                                                    │ │
+│ │                 │   │   │   detector=Detector(                                               │ │
+│ │                 │   │   │   │   buffer_size=10000,                                           │ │
+│ │                 │   │   │   │   sample_size=100,                                             │ │
+│ │                 │   │   │   │   encoding_function=None,                                      │ │
+│ │                 │   │   │   │   encoding_confidence=0.5,                                     │ │
+│ │                 │   │   │   │   field_type=None,                                             │ │
+│ │                 │   │   │   │   field_names=None,                                            │ │
+│ │                 │   │   │   │   field_confidence=0.9,                                        │ │
+│ │                 │   │   │   │   field_float_numbers=False,                                   │ │
+│ │                 │   │   │   │   field_missing_values=[''],                                   │ │
+│ │                 │   │   │   │   field_true_values=['true', 'True', 'TRUE', '1'],             │ │
+│ │                 │   │   │   │   field_false_values=['false', 'False', 'FALSE', '0'],         │ │
+│ │                 │   │   │   │   schema_sync=False,                                           │ │
+│ │                 │   │   │   │   schema_patch=None                                            │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   package=...,                                                     │ │
+│ │                 │   │   │   stats=ResourceStats(                                             │ │
+│ │                 │   │   │   │   md5=None,                                                    │ │
+│ │                 │   │   │   │   sha256=None,                                                 │ │
+│ │                 │   │   │   │   bytes=None,                                                  │ │
+│ │                 │   │   │   │   fields=None,                                                 │ │
+│ │                 │   │   │   │   rows=None                                                    │ │
+│ │                 │   │   │   )                                                                │ │
+│ │                 │   │   )                                                                    │ │
+│ │                 │   ],                                                                       │ │
+│ │                 │   dataset=None,                                                            │ │
+│ │                 │   _dialect=None,                                                           │ │
+│ │                 │   _detector=None                                                           │ │
+│ │                 )                                                                            │ │
+│ │           res = <Response [200]>                                                             │ │
+│ │      resource = TableResource(                                                               │ │
+│ │                 │   source=None,                                                             │ │
+│ │                 │   control=None,                                                            │ │
+│ │                 │   packagify=False,                                                         │ │
+│ │                 │   _name='localizadores_todos_planejamento',                                │ │
+│ │                 │   title=None,                                                              │ │
+│ │                 │   description=None,                                                        │ │
+│ │                 │   homepage=None,                                                           │ │
+│ │                 │   profile=None,                                                            │ │
+│ │                 │   licenses=[],                                                             │ │
+│ │                 │   sources=[                                                                │ │
+│ │                 │   │   {                                                                    │ │
+│ │                 │   │   │   'name': 'localizadores_todos_planejamento',                      │ │
+│ │                 │   │   │   'title': 'Relatórios e Bases do Planejamento - Localizadores     │ │
+│ │                 (Todos)',                                                                    │ │
+│ │                 │   │   │   'path':                                                          │ │
+│ │                 'https://www.sigplan.mg.gov.br/BasesTxt/localizadores_Todos_planejamento.tx… │ │
+│ │                 │   │   │   'link':                                                          │ │
+│ │                 'https://www.sigplan.mg.gov.br/v4/Relatorios/base_localizadores_planejament… │ │
+│ │                 │   │   │   'staging': 'data/staging/localizadores_todos_planejamento.txt',  │ │
+│ │                 │   │   │   'format': 'csv',                                                 │ │
+│ │                 │   │   │   'encoding': 'windows-1252',                                      │ │
+│ │                 │   │   │   'dialect': {'csv': {'delimiter': '|'}},                          │ │
+│ │                 │   │   │   'schema': 'schemas/raw/localizadores_todos_planejamento.yaml'    │ │
+│ │                 │   │   }                                                                    │ │
+│ │                 │   ],                                                                       │ │
+│ │                 │   path='data/localizadores_todos_planejamento.csv',                        │ │
+│ │                 │   data=None,                                                               │ │
+│ │                 │   scheme='file',                                                           │ │
+│ │                 │   format='csv',                                                            │ │
+│ │                 │   _datatype='',                                                            │ │
+│ │                 │   mediatype='text/csv',                                                    │ │
+│ │                 │   compression=None,                                                        │ │
+│ │                 │   extrapaths=[],                                                           │ │
+│ │                 │   innerpath=None,                                                          │ │
+│ │                 │   encoding=None,                                                           │ │
+│ │                 │   hash=None,                                                               │ │
+│ │                 │   bytes=None,                                                              │ │
+│ │                 │   fields=None,                                                             │ │
+│ │                 │   rows=None,                                                               │ │
+│ │                 │   _dialect=Dialect(                                                        │ │
+│ │                 │   │   descriptor=None,                                                     │ │
+│ │                 │   │   name=None,                                                           │ │
+│ │                 │   │   title=None,                                                          │ │
+│ │                 │   │   description=None,                                                    │ │
+│ │                 │   │   header=True,                                                         │ │
+│ │                 │   │   header_rows=[1],                                                     │ │
+│ │                 │   │   header_join=' ',                                                     │ │
+│ │                 │   │   header_case=True,                                                    │ │
+│ │                 │   │   comment_char=None,                                                   │ │
+│ │                 │   │   comment_rows=[],                                                     │ │
+│ │                 │   │   skip_blank_rows=False,                                               │ │
+│ │                 │   │   controls=[]                                                          │ │
+│ │                 │   ),                                                                       │ │
+│ │                 │   _schema=Schema(                                                          │ │
+│ │                 │   │   descriptor=None,                                                     │ │
+│ │                 │   │   name=None,                                                           │ │
+│ │                 │   │   title=None,                                                          │ │
+│ │                 │   │   description=None,                                                    │ │
+│ │                 │   │   fields=[                                                             │ │
+│ │                 │   │   │   IntegerField(                                                    │ │
+│ │                 │   │   │   │   name='codigo_do_programa',                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...,                                                  │ │
+│ │                 │   │   │   │   bare_number=True                                             │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='nome_do_programa',                                     │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='codigo_da_area_tematica',                              │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='area_tematica',                                        │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   BooleanField(                                                    │ │
+│ │                 │   │   │   │   name='exclusao_logica_do_programa',                          │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...,                                                  │ │
+│ │                 │   │   │   │   true_values=['true', 'True', 'TRUE', '1'],                   │ │
+│ │                 │   │   │   │   false_values=['false', 'False', 'FALSE', '0']                │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   IntegerField(                                                    │ │
+│ │                 │   │   │   │   name='codigo_da_acao',                                       │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...,                                                  │ │
+│ │                 │   │   │   │   bare_number=True                                             │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='titulo_da_acao',                                       │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   IntegerField(                                                    │ │
+│ │                 │   │   │   │   name='codigo_do_identificador_de_acao_governamental_iag',    │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...,                                                  │ │
+│ │                 │   │   │   │   bare_number=True                                             │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='identificador_de_acao_governamental_iag',              │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='codigo_do_projeto_estrategico',                        │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   ... +23                                                          │ │
+│ │                 │   │   ],                                                                   │ │
+│ │                 │   │   missing_values=[''],                                                 │ │
+│ │                 │   │   primary_key=[],                                                      │ │
+│ │                 │   │   foreign_keys=[]                                                      │ │
+│ │                 │   ),                                                                       │ │
+│ │                 │   _basepath='',                                                            │ │
+│ │                 │   detector=Detector(                                                       │ │
+│ │                 │   │   buffer_size=10000,                                                   │ │
+│ │                 │   │   sample_size=100,                                                     │ │
+│ │                 │   │   encoding_function=None,                                              │ │
+│ │                 │   │   encoding_confidence=0.5,                                             │ │
+│ │                 │   │   field_type=None,                                                     │ │
+│ │                 │   │   field_names=None,                                                    │ │
+│ │                 │   │   field_confidence=0.9,                                                │ │
+│ │                 │   │   field_float_numbers=False,                                           │ │
+│ │                 │   │   field_missing_values=[''],                                           │ │
+│ │                 │   │   field_true_values=['true', 'True', 'TRUE', '1'],                     │ │
+│ │                 │   │   field_false_values=['false', 'False', 'FALSE', '0'],                 │ │
+│ │                 │   │   schema_sync=False,                                                   │ │
+│ │                 │   │   schema_patch=None                                                    │ │
+│ │                 │   ),                                                                       │ │
+│ │                 │   package=Package(                                                         │ │
+│ │                 │   │   source=None,                                                         │ │
+│ │                 │   │   control=None,                                                        │ │
+│ │                 │   │   _basepath='',                                                        │ │
+│ │                 │   │   name='ppag2023-dadosmg',                                             │ │
+│ │                 │   │   title=None,                                                          │ │
+│ │                 │   │   description=None,                                                    │ │
+│ │                 │   │   homepage=None,                                                       │ │
+│ │                 │   │   profile=None,                                                        │ │
+│ │                 │   │   licenses=[],                                                         │ │
+│ │                 │   │   sources=[],                                                          │ │
+│ │                 │   │   contributors=[],                                                     │ │
+│ │                 │   │   keywords=[],                                                         │ │
+│ │                 │   │   image=None,                                                          │ │
+│ │                 │   │   version=None,                                                        │ │
+│ │                 │   │   created=None,                                                        │ │
+│ │                 │   │   resources=[                                                          │ │
+│ │                 │   │   │   TableResource(                                                   │ │
+│ │                 │   │   │   │   source=None,                                                 │ │
+│ │                 │   │   │   │   control=None,                                                │ │
+│ │                 │   │   │   │   packagify=False,                                             │ │
+│ │                 │   │   │   │   _name='acoes_planejamento',                                  │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   homepage=None,                                               │ │
+│ │                 │   │   │   │   profile=None,                                                │ │
+│ │                 │   │   │   │   licenses=[],                                                 │ │
+│ │                 │   │   │   │   sources=[                                                    │ │
+│ │                 │   │   │   │   │   {                                                        │ │
+│ │                 │   │   │   │   │   │   'name': 'acoes_planejamento',                        │ │
+│ │                 │   │   │   │   │   │   'title': 'Relatórios e Bases do Planejamento -       │ │
+│ │                 Ações',                                                                      │ │
+│ │                 │   │   │   │   │   │   'path':                                              │ │
+│ │                 'https://www.sigplan.mg.gov.br/BasesTxt/acoes_planejamento.txt',             │ │
+│ │                 │   │   │   │   │   │   'link':                                              │ │
+│ │                 'https://www.sigplan.mg.gov.br/v4/Relatorios/base_programas_planejamento.as… │ │
+│ │                 │   │   │   │   │   │   'staging': 'data/staging/acoes_planejamento.txt',    │ │
+│ │                 │   │   │   │   │   │   'format': 'csv',                                     │ │
+│ │                 │   │   │   │   │   │   'encoding': 'windows-1252',                          │ │
+│ │                 │   │   │   │   │   │   'dialect': {'csv': {'delimiter': '|'}},              │ │
+│ │                 │   │   │   │   │   │   'schema': 'schemas/raw/acoes_planejamento.yaml'      │ │
+│ │                 │   │   │   │   │   }                                                        │ │
+│ │                 │   │   │   │   ],                                                           │ │
+│ │                 │   │   │   │   path='data/acoes_planejamento.csv',                          │ │
+│ │                 │   │   │   │   data=None,                                                   │ │
+│ │                 │   │   │   │   scheme='file',                                               │ │
+│ │                 │   │   │   │   format='csv',                                                │ │
+│ │                 │   │   │   │   _datatype='',                                                │ │
+│ │                 │   │   │   │   mediatype='text/csv',                                        │ │
+│ │                 │   │   │   │   compression=None,                                            │ │
+│ │                 │   │   │   │   extrapaths=[],                                               │ │
+│ │                 │   │   │   │   innerpath=None,                                              │ │
+│ │                 │   │   │   │   encoding=None,                                               │ │
+│ │                 │   │   │   │   hash=None,                                                   │ │
+│ │                 │   │   │   │   bytes=None,                                                  │ │
+│ │                 │   │   │   │   fields=None,                                                 │ │
+│ │                 │   │   │   │   rows=None,                                                   │ │
+│ │                 │   │   │   │   _dialect=Dialect(                                            │ │
+│ │                 │   │   │   │   │   descriptor=None,                                         │ │
+│ │                 │   │   │   │   │   name=None,                                               │ │
+│ │                 │   │   │   │   │   title=None,                                              │ │
+│ │                 │   │   │   │   │   description=None,                                        │ │
+│ │                 │   │   │   │   │   header=True,                                             │ │
+│ │                 │   │   │   │   │   header_rows=[1],                                         │ │
+│ │                 │   │   │   │   │   header_join=' ',                                         │ │
+│ │                 │   │   │   │   │   header_case=True,                                        │ │
+│ │                 │   │   │   │   │   comment_char=None,                                       │ │
+│ │                 │   │   │   │   │   comment_rows=[],                                         │ │
+│ │                 │   │   │   │   │   skip_blank_rows=False,                                   │ │
+│ │                 │   │   │   │   │   controls=[]                                              │ │
+│ │                 │   │   │   │   ),                                                           │ │
+│ │                 │   │   │   │   _schema=Schema(                                              │ │
+│ │                 │   │   │   │   │   descriptor=None,                                         │ │
+│ │                 │   │   │   │   │   name=None,                                               │ │
+│ │                 │   │   │   │   │   title=None,                                              │ │
+│ │                 │   │   │   │   │   description=None,                                        │ │
+│ │                 │   │   │   │   │   fields=[                                                 │ │
+│ │                 │   │   │   │   │   │   IntegerField(                                        │ │
+│ │                 │   │   │   │   │   │   │   name='codigo_do_programa',                       │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...,                                      │ │
+│ │                 │   │   │   │   │   │   │   bare_number=True                                 │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='nome_do_programa',                         │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='codigo_da_area_tematica',                  │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='area_tematica',                            │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='exclusao_logica_do_programa',              │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='programa_novo',                            │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │                                                    │ │
+│ │                 name='justificativa_de_inclusao_ou_exclusao_do_programa',                    │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   IntegerField(                                        │ │
+│ │                 │   │   │   │   │   │   │                                                    │ │
+│ │                 name='codigo_da_unidade_orcamentaria_responsavel_pelo_programa',             │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...,                                      │ │
+│ │                 │   │   │   │   │   │   │   bare_number=True                                 │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │                                                    │ │
+│ │                 name='unidade_orcamentaria_responsavel_pelo_programa',                       │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   IntegerField(                                        │ │
+│ │                 │   │   │   │   │   │   │                                                    │ │
+│ │                 name='codigo_da_unidade_orcamentaria_responsavel_pela_acao',                 │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...,                                      │ │
+│ │                 │   │   │   │   │   │   │   bare_number=True                                 │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   ... +38                                              │ │
+│ │                 │   │   │   │   │   ],                                                       │ │
+│ │                 │   │   │   │   │   missing_values=[''],                                     │ │
+│ │                 │   │   │   │   │   primary_key=[],                                          │ │
+│ │                 │   │   │   │   │   foreign_keys=[]                                          │ │
+│ │                 │   │   │   │   ),                                                           │ │
+│ │                 │   │   │   │   _basepath='',                                                │ │
+│ │                 │   │   │   │   detector=Detector(                                           │ │
+│ │                 │   │   │   │   │   buffer_size=10000,                                       │ │
+│ │                 │   │   │   │   │   sample_size=100,                                         │ │
+│ │                 │   │   │   │   │   encoding_function=None,                                  │ │
+│ │                 │   │   │   │   │   encoding_confidence=0.5,                                 │ │
+│ │                 │   │   │   │   │   field_type=None,                                         │ │
+│ │                 │   │   │   │   │   field_names=None,                                        │ │
+│ │                 │   │   │   │   │   field_confidence=0.9,                                    │ │
+│ │                 │   │   │   │   │   field_float_numbers=False,                               │ │
+│ │                 │   │   │   │   │   field_missing_values=[''],                               │ │
+│ │                 │   │   │   │   │   field_true_values=['true', 'True', 'TRUE', '1'],         │ │
+│ │                 │   │   │   │   │   field_false_values=['false', 'False', 'FALSE', '0'],     │ │
+│ │                 │   │   │   │   │   schema_sync=False,                                       │ │
+│ │                 │   │   │   │   │   schema_patch=None                                        │ │
+│ │                 │   │   │   │   ),                                                           │ │
+│ │                 │   │   │   │   package=...,                                                 │ │
+│ │                 │   │   │   │   stats=ResourceStats(                                         │ │
+│ │                 │   │   │   │   │   md5=None,                                                │ │
+│ │                 │   │   │   │   │   sha256=None,                                             │ │
+│ │                 │   │   │   │   │   bytes=None,                                              │ │
+│ │                 │   │   │   │   │   fields=None,                                             │ │
+│ │                 │   │   │   │   │   rows=None                                                │ │
+│ │                 │   │   │   │   )                                                            │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   TableResource(                                                   │ │
+│ │                 │   │   │   │   source=None,                                                 │ │
+│ │                 │   │   │   │   control=None,                                                │ │
+│ │                 │   │   │   │   packagify=False,                                             │ │
+│ │                 │   │   │   │   _name='indicadores_planejamento',                            │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   homepage=None,                                               │ │
+│ │                 │   │   │   │   profile=None,                                                │ │
+│ │                 │   │   │   │   licenses=[],                                                 │ │
+│ │                 │   │   │   │   sources=[                                                    │ │
+│ │                 │   │   │   │   │   {                                                        │ │
+│ │                 │   │   │   │   │   │   'name': 'indicadores_planejamento',                  │ │
+│ │                 │   │   │   │   │   │   'title': 'Relatórios e Bases do Planejamento -       │ │
+│ │                 Indicadores',                                                                │ │
+│ │                 │   │   │   │   │   │   'path':                                              │ │
+│ │                 'https://www.sigplan.mg.gov.br/BasesTxt/indicadores_planejamento.txt',       │ │
+│ │                 │   │   │   │   │   │   'link':                                              │ │
+│ │                 'https://www.sigplan.mg.gov.br/v4/Relatorios/base_indicadores_planejamento.… │ │
+│ │                 │   │   │   │   │   │   'staging':                                           │ │
+│ │                 'data/staging/indicadores_planejamento.txt',                                 │ │
+│ │                 │   │   │   │   │   │   'format': 'csv',                                     │ │
+│ │                 │   │   │   │   │   │   'encoding': 'windows-1252',                          │ │
+│ │                 │   │   │   │   │   │   'dialect': {'csv': {'delimiter': '|'}},              │ │
+│ │                 │   │   │   │   │   │   'schema':                                            │ │
+│ │                 'schemas/raw/indicadores_planejamento.yaml'                                  │ │
+│ │                 │   │   │   │   │   }                                                        │ │
+│ │                 │   │   │   │   ],                                                           │ │
+│ │                 │   │   │   │   path='data/indicadores_planejamento.csv',                    │ │
+│ │                 │   │   │   │   data=None,                                                   │ │
+│ │                 │   │   │   │   scheme='file',                                               │ │
+│ │                 │   │   │   │   format='csv',                                                │ │
+│ │                 │   │   │   │   _datatype='',                                                │ │
+│ │                 │   │   │   │   mediatype='text/csv',                                        │ │
+│ │                 │   │   │   │   compression=None,                                            │ │
+│ │                 │   │   │   │   extrapaths=[],                                               │ │
+│ │                 │   │   │   │   innerpath=None,                                              │ │
+│ │                 │   │   │   │   encoding=None,                                               │ │
+│ │                 │   │   │   │   hash=None,                                                   │ │
+│ │                 │   │   │   │   bytes=None,                                                  │ │
+│ │                 │   │   │   │   fields=None,                                                 │ │
+│ │                 │   │   │   │   rows=None,                                                   │ │
+│ │                 │   │   │   │   _dialect=Dialect(                                            │ │
+│ │                 │   │   │   │   │   descriptor=None,                                         │ │
+│ │                 │   │   │   │   │   name=None,                                               │ │
+│ │                 │   │   │   │   │   title=None,                                              │ │
+│ │                 │   │   │   │   │   description=None,                                        │ │
+│ │                 │   │   │   │   │   header=True,                                             │ │
+│ │                 │   │   │   │   │   header_rows=[1],                                         │ │
+│ │                 │   │   │   │   │   header_join=' ',                                         │ │
+│ │                 │   │   │   │   │   header_case=True,                                        │ │
+│ │                 │   │   │   │   │   comment_char=None,                                       │ │
+│ │                 │   │   │   │   │   comment_rows=[],                                         │ │
+│ │                 │   │   │   │   │   skip_blank_rows=False,                                   │ │
+│ │                 │   │   │   │   │   controls=[]                                              │ │
+│ │                 │   │   │   │   ),                                                           │ │
+│ │                 │   │   │   │   _schema=Schema(                                              │ │
+│ │                 │   │   │   │   │   descriptor=None,                                         │ │
+│ │                 │   │   │   │   │   name=None,                                               │ │
+│ │                 │   │   │   │   │   title=None,                                              │ │
+│ │                 │   │   │   │   │   description=None,                                        │ │
+│ │                 │   │   │   │   │   fields=[                                                 │ │
+│ │                 │   │   │   │   │   │   IntegerField(                                        │ │
+│ │                 │   │   │   │   │   │   │   name='codigo_do_programa',                       │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...,                                      │ │
+│ │                 │   │   │   │   │   │   │   bare_number=True                                 │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='nome_do_programa',                         │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   BooleanField(                                        │ │
+│ │                 │   │   │   │   │   │   │   name='exclusao_logica_do_programa',              │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...,                                      │ │
+│ │                 │   │   │   │   │   │   │   true_values=['true', 'True', 'TRUE', '1'],       │ │
+│ │                 │   │   │   │   │   │   │   false_values=['false', 'False', 'FALSE', '0']    │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='indicador',                                │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   BooleanField(                                        │ │
+│ │                 │   │   │   │   │   │   │   name='exclusao_logica_do_indicador',             │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...,                                      │ │
+│ │                 │   │   │   │   │   │   │   true_values=['true', 'True', 'TRUE', '1'],       │ │
+│ │                 │   │   │   │   │   │   │   false_values=['false', 'False', 'FALSE', '0']    │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='unidade_de_medida',                        │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='indice_de_referencia',                     │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='em_apuracao_indice_de_referencia',         │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='data_de_apuracao',                         │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='previsao_para_2023',                       │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   ... +16                                              │ │
+│ │                 │   │   │   │   │   ],                                                       │ │
+│ │                 │   │   │   │   │   missing_values=[''],                                     │ │
+│ │                 │   │   │   │   │   primary_key=[],                                          │ │
+│ │                 │   │   │   │   │   foreign_keys=[]                                          │ │
+│ │                 │   │   │   │   ),                                                           │ │
+│ │                 │   │   │   │   _basepath='',                                                │ │
+│ │                 │   │   │   │   detector=Detector(                                           │ │
+│ │                 │   │   │   │   │   buffer_size=10000,                                       │ │
+│ │                 │   │   │   │   │   sample_size=100,                                         │ │
+│ │                 │   │   │   │   │   encoding_function=None,                                  │ │
+│ │                 │   │   │   │   │   encoding_confidence=0.5,                                 │ │
+│ │                 │   │   │   │   │   field_type=None,                                         │ │
+│ │                 │   │   │   │   │   field_names=None,                                        │ │
+│ │                 │   │   │   │   │   field_confidence=0.9,                                    │ │
+│ │                 │   │   │   │   │   field_float_numbers=False,                               │ │
+│ │                 │   │   │   │   │   field_missing_values=[''],                               │ │
+│ │                 │   │   │   │   │   field_true_values=['true', 'True', 'TRUE', '1'],         │ │
+│ │                 │   │   │   │   │   field_false_values=['false', 'False', 'FALSE', '0'],     │ │
+│ │                 │   │   │   │   │   schema_sync=False,                                       │ │
+│ │                 │   │   │   │   │   schema_patch=None                                        │ │
+│ │                 │   │   │   │   ),                                                           │ │
+│ │                 │   │   │   │   package=...,                                                 │ │
+│ │                 │   │   │   │   stats=ResourceStats(                                         │ │
+│ │                 │   │   │   │   │   md5=None,                                                │ │
+│ │                 │   │   │   │   │   sha256=None,                                             │ │
+│ │                 │   │   │   │   │   bytes=None,                                              │ │
+│ │                 │   │   │   │   │   fields=None,                                             │ │
+│ │                 │   │   │   │   │   rows=None                                                │ │
+│ │                 │   │   │   │   )                                                            │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   ...,                                                             │ │
+│ │                 │   │   │   TableResource(                                                   │ │
+│ │                 │   │   │   │   source=None,                                                 │ │
+│ │                 │   │   │   │   control=None,                                                │ │
+│ │                 │   │   │   │   packagify=False,                                             │ │
+│ │                 │   │   │   │   _name='programas_planejamento',                              │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   homepage=None,                                               │ │
+│ │                 │   │   │   │   profile=None,                                                │ │
+│ │                 │   │   │   │   licenses=[],                                                 │ │
+│ │                 │   │   │   │   sources=[                                                    │ │
+│ │                 │   │   │   │   │   {                                                        │ │
+│ │                 │   │   │   │   │   │   'name': 'programas_planejamento',                    │ │
+│ │                 │   │   │   │   │   │   'title': 'Relatórios e Bases do Planejamento -       │ │
+│ │                 Programas',                                                                  │ │
+│ │                 │   │   │   │   │   │   'path':                                              │ │
+│ │                 'https://www.sigplan.mg.gov.br/BasesTxt/programas_planejamento.txt',         │ │
+│ │                 │   │   │   │   │   │   'link':                                              │ │
+│ │                 'https://www.sigplan.mg.gov.br/v4/Relatorios/base_programas_planejamento.as… │ │
+│ │                 │   │   │   │   │   │   'format': 'csv',                                     │ │
+│ │                 │   │   │   │   │   │   'staging':                                           │ │
+│ │                 'data/staging/programas_planejamento.txt',                                   │ │
+│ │                 │   │   │   │   │   │   'encoding': 'windows-1252',                          │ │
+│ │                 │   │   │   │   │   │   'dialect': {'csv': {'delimiter': '|'}},              │ │
+│ │                 │   │   │   │   │   │   'schema': 'schemas/raw/programas_planejamento.yaml'  │ │
+│ │                 │   │   │   │   │   }                                                        │ │
+│ │                 │   │   │   │   ],                                                           │ │
+│ │                 │   │   │   │   path='data/programas_planejamento.csv',                      │ │
+│ │                 │   │   │   │   data=None,                                                   │ │
+│ │                 │   │   │   │   scheme='file',                                               │ │
+│ │                 │   │   │   │   format='csv',                                                │ │
+│ │                 │   │   │   │   _datatype='',                                                │ │
+│ │                 │   │   │   │   mediatype='text/csv',                                        │ │
+│ │                 │   │   │   │   compression=None,                                            │ │
+│ │                 │   │   │   │   extrapaths=[],                                               │ │
+│ │                 │   │   │   │   innerpath=None,                                              │ │
+│ │                 │   │   │   │   encoding=None,                                               │ │
+│ │                 │   │   │   │   hash=None,                                                   │ │
+│ │                 │   │   │   │   bytes=None,                                                  │ │
+│ │                 │   │   │   │   fields=None,                                                 │ │
+│ │                 │   │   │   │   rows=None,                                                   │ │
+│ │                 │   │   │   │   _dialect=Dialect(                                            │ │
+│ │                 │   │   │   │   │   descriptor=None,                                         │ │
+│ │                 │   │   │   │   │   name=None,                                               │ │
+│ │                 │   │   │   │   │   title=None,                                              │ │
+│ │                 │   │   │   │   │   description=None,                                        │ │
+│ │                 │   │   │   │   │   header=True,                                             │ │
+│ │                 │   │   │   │   │   header_rows=[1],                                         │ │
+│ │                 │   │   │   │   │   header_join=' ',                                         │ │
+│ │                 │   │   │   │   │   header_case=True,                                        │ │
+│ │                 │   │   │   │   │   comment_char=None,                                       │ │
+│ │                 │   │   │   │   │   comment_rows=[],                                         │ │
+│ │                 │   │   │   │   │   skip_blank_rows=False,                                   │ │
+│ │                 │   │   │   │   │   controls=[]                                              │ │
+│ │                 │   │   │   │   ),                                                           │ │
+│ │                 │   │   │   │   _schema=Schema(                                              │ │
+│ │                 │   │   │   │   │   descriptor=None,                                         │ │
+│ │                 │   │   │   │   │   name=None,                                               │ │
+│ │                 │   │   │   │   │   title=None,                                              │ │
+│ │                 │   │   │   │   │   description=None,                                        │ │
+│ │                 │   │   │   │   │   fields=[                                                 │ │
+│ │                 │   │   │   │   │   │   IntegerField(                                        │ │
+│ │                 │   │   │   │   │   │   │   name='codigo_do_programa',                       │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...,                                      │ │
+│ │                 │   │   │   │   │   │   │   bare_number=True                                 │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='nome_do_programa',                         │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='exclusao_logica_do_programa',              │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='programa_novo',                            │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='codigo_da_area_tematica',                  │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='area_tematica',                            │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   IntegerField(                                        │ │
+│ │                 │   │   │   │   │   │   │   name='codigo_do_objetivo_estrategico',           │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...,                                      │ │
+│ │                 │   │   │   │   │   │   │   bare_number=True                                 │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='objetivo_estrategico',                     │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='codigo_da_diretriz_estrategica',           │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   StringField(                                         │ │
+│ │                 │   │   │   │   │   │   │   name='diretriz_estrategica',                     │ │
+│ │                 │   │   │   │   │   │   │   title=None,                                      │ │
+│ │                 │   │   │   │   │   │   │   description=None,                                │ │
+│ │                 │   │   │   │   │   │   │   format='default',                                │ │
+│ │                 │   │   │   │   │   │   │   missing_values=[''],                             │ │
+│ │                 │   │   │   │   │   │   │   constraints={},                                  │ │
+│ │                 │   │   │   │   │   │   │   rdf_type=None,                                   │ │
+│ │                 │   │   │   │   │   │   │   example=None,                                    │ │
+│ │                 │   │   │   │   │   │   │   schema=...                                       │ │
+│ │                 │   │   │   │   │   │   ),                                                   │ │
+│ │                 │   │   │   │   │   │   ... +19                                              │ │
+│ │                 │   │   │   │   │   ],                                                       │ │
+│ │                 │   │   │   │   │   missing_values=[''],                                     │ │
+│ │                 │   │   │   │   │   primary_key=[],                                          │ │
+│ │                 │   │   │   │   │   foreign_keys=[]                                          │ │
+│ │                 │   │   │   │   ),                                                           │ │
+│ │                 │   │   │   │   _basepath='',                                                │ │
+│ │                 │   │   │   │   detector=Detector(                                           │ │
+│ │                 │   │   │   │   │   buffer_size=10000,                                       │ │
+│ │                 │   │   │   │   │   sample_size=100,                                         │ │
+│ │                 │   │   │   │   │   encoding_function=None,                                  │ │
+│ │                 │   │   │   │   │   encoding_confidence=0.5,                                 │ │
+│ │                 │   │   │   │   │   field_type=None,                                         │ │
+│ │                 │   │   │   │   │   field_names=None,                                        │ │
+│ │                 │   │   │   │   │   field_confidence=0.9,                                    │ │
+│ │                 │   │   │   │   │   field_float_numbers=False,                               │ │
+│ │                 │   │   │   │   │   field_missing_values=[''],                               │ │
+│ │                 │   │   │   │   │   field_true_values=['true', 'True', 'TRUE', '1'],         │ │
+│ │                 │   │   │   │   │   field_false_values=['false', 'False', 'FALSE', '0'],     │ │
+│ │                 │   │   │   │   │   schema_sync=False,                                       │ │
+│ │                 │   │   │   │   │   schema_patch=None                                        │ │
+│ │                 │   │   │   │   ),                                                           │ │
+│ │                 │   │   │   │   package=...,                                                 │ │
+│ │                 │   │   │   │   stats=ResourceStats(                                         │ │
+│ │                 │   │   │   │   │   md5=None,                                                │ │
+│ │                 │   │   │   │   │   sha256=None,                                             │ │
+│ │                 │   │   │   │   │   bytes=None,                                              │ │
+│ │                 │   │   │   │   │   fields=None,                                             │ │
+│ │                 │   │   │   │   │   rows=None                                                │ │
+│ │                 │   │   │   │   )                                                            │ │
+│ │                 │   │   │   )                                                                │ │
+│ │                 │   │   ],                                                                   │ │
+│ │                 │   │   dataset=None,                                                        │ │
+│ │                 │   │   _dialect=None,                                                       │ │
+│ │                 │   │   _detector=None                                                       │ │
+│ │                 │   ),                                                                       │ │
+│ │                 │   stats=ResourceStats(                                                     │ │
+│ │                 │   │   md5=None,                                                            │ │
+│ │                 │   │   sha256=None,                                                         │ │
+│ │                 │   │   bytes=None,                                                          │ │
+│ │                 │   │   fields=None,                                                         │ │
+│ │                 │   │   rows=None                                                            │ │
+│ │                 │   )                                                                        │ │
+│ │                 )                                                                            │ │
+│ │ resource_name = 'localizadores_todos_planejamento'                                           │ │
+│ │        source = TableResource(                                                               │ │
+│ │                 │   source=None,                                                             │ │
+│ │                 │   control=None,                                                            │ │
+│ │                 │   packagify=False,                                                         │ │
+│ │                 │   _name='localizadores_todos_planejamento',                                │ │
+│ │                 │   title='Relatórios e Bases do Planejamento - Localizadores (Todos)',      │ │
+│ │                 │   description=None,                                                        │ │
+│ │                 │   homepage=None,                                                           │ │
+│ │                 │   profile=None,                                                            │ │
+│ │                 │   licenses=[],                                                             │ │
+│ │                 │   sources=[],                                                              │ │
+│ │                 │                                                                            │ │
+│ │                 path='https://www.sigplan.mg.gov.br/BasesTxt/localizadores_Todos_planejamen… │ │
+│ │                 │   data=None,                                                               │ │
+│ │                 │   scheme='https',                                                          │ │
+│ │                 │   format='csv',                                                            │ │
+│ │                 │   _datatype='',                                                            │ │
+│ │                 │   mediatype='text/csv',                                                    │ │
+│ │                 │   compression=None,                                                        │ │
+│ │                 │   extrapaths=[],                                                           │ │
+│ │                 │   innerpath=None,                                                          │ │
+│ │                 │   encoding='cp1252',                                                       │ │
+│ │                 │   hash=None,                                                               │ │
+│ │                 │   bytes=None,                                                              │ │
+│ │                 │   fields=None,                                                             │ │
+│ │                 │   rows=None,                                                               │ │
+│ │                 │   _dialect=Dialect(                                                        │ │
+│ │                 │   │   descriptor=None,                                                     │ │
+│ │                 │   │   name=None,                                                           │ │
+│ │                 │   │   title=None,                                                          │ │
+│ │                 │   │   description=None,                                                    │ │
+│ │                 │   │   header=True,                                                         │ │
+│ │                 │   │   header_rows=[1],                                                     │ │
+│ │                 │   │   header_join=' ',                                                     │ │
+│ │                 │   │   header_case=True,                                                    │ │
+│ │                 │   │   comment_char=None,                                                   │ │
+│ │                 │   │   comment_rows=[],                                                     │ │
+│ │                 │   │   skip_blank_rows=False,                                               │ │
+│ │                 │   │   controls=[                                                           │ │
+│ │                 │   │   │   CsvControl(                                                      │ │
+│ │                 │   │   │   │   name=None,                                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   delimiter='|',                                               │ │
+│ │                 │   │   │   │   line_terminator='\r\n',                                      │ │
+│ │                 │   │   │   │   quote_char='"',                                              │ │
+│ │                 │   │   │   │   double_quote=True,                                           │ │
+│ │                 │   │   │   │   escape_char=None,                                            │ │
+│ │                 │   │   │   │   null_sequence=None,                                          │ │
+│ │                 │   │   │   │   skip_initial_space=False                                     │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   RemoteControl(                                                   │ │
+│ │                 │   │   │   │   name=None,                                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   http_timeout=10,                                             │ │
+│ │                 │   │   │   │   http_preload=False                                           │ │
+│ │                 │   │   │   )                                                                │ │
+│ │                 │   │   ]                                                                    │ │
+│ │                 │   ),                                                                       │ │
+│ │                 │   _schema=Schema(                                                          │ │
+│ │                 │   │   descriptor=None,                                                     │ │
+│ │                 │   │   name=None,                                                           │ │
+│ │                 │   │   title=None,                                                          │ │
+│ │                 │   │   description=None,                                                    │ │
+│ │                 │   │   fields=[                                                             │ │
+│ │                 │   │   │   IntegerField(                                                    │ │
+│ │                 │   │   │   │   name='Código do Programa',                                   │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...,                                                  │ │
+│ │                 │   │   │   │   bare_number=True                                             │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='Nome do Programa',                                     │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='Código da Área Temática',                              │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='Área Temática',                                        │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   BooleanField(                                                    │ │
+│ │                 │   │   │   │   name='Exclusão Lógica do Programa',                          │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...,                                                  │ │
+│ │                 │   │   │   │   true_values=['true', 'True', 'TRUE', '1'],                   │ │
+│ │                 │   │   │   │   false_values=['false', 'False', 'FALSE', '0']                │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   IntegerField(                                                    │ │
+│ │                 │   │   │   │   name='Código da Ação',                                       │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...,                                                  │ │
+│ │                 │   │   │   │   bare_number=True                                             │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='Título da Ação',                                       │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   IntegerField(                                                    │ │
+│ │                 │   │   │   │   name='Código do Identificador de Ação Governamental (IAG)',  │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...,                                                  │ │
+│ │                 │   │   │   │   bare_number=True                                             │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   StringField(                                                     │ │
+│ │                 │   │   │   │   name='Identificador de Ação Governamental (IAG)',            │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   AnyField(                                                        │ │
+│ │                 │   │   │   │   name='Código do Projeto Estratégico',                        │ │
+│ │                 │   │   │   │   title=None,                                                  │ │
+│ │                 │   │   │   │   description=None,                                            │ │
+│ │                 │   │   │   │   format='default',                                            │ │
+│ │                 │   │   │   │   missing_values=[''],                                         │ │
+│ │                 │   │   │   │   constraints={},                                              │ │
+│ │                 │   │   │   │   rdf_type=None,                                               │ │
+│ │                 │   │   │   │   example=None,                                                │ │
+│ │                 │   │   │   │   schema=...                                                   │ │
+│ │                 │   │   │   ),                                                               │ │
+│ │                 │   │   │   ... +23                                                          │ │
+│ │                 │   │   ],                                                                   │ │
+│ │                 │   │   missing_values=[''],                                                 │ │
+│ │                 │   │   primary_key=[],                                                      │ │
+│ │                 │   │   foreign_keys=[]                                                      │ │
+│ │                 │   ),                                                                       │ │
+│ │                 │   _basepath=None,                                                          │ │
+│ │                 │   detector=Detector(                                                       │ │
+│ │                 │   │   buffer_size=10000,                                                   │ │
+│ │                 │   │   sample_size=100,                                                     │ │
+│ │                 │   │   encoding_function=None,                                              │ │
+│ │                 │   │   encoding_confidence=0.5,                                             │ │
+│ │                 │   │   field_type=None,                                                     │ │
+│ │                 │   │   field_names=None,                                                    │ │
+│ │                 │   │   field_confidence=0.9,                                                │ │
+│ │                 │   │   field_float_numbers=False,                                           │ │
+│ │                 │   │   field_missing_values=[''],                                           │ │
+│ │                 │   │   field_true_values=['true', 'True', 'TRUE', '1'],                     │ │
+│ │                 │   │   field_false_values=['false', 'False', 'FALSE', '0'],                 │ │
+│ │                 │   │   schema_sync=False,                                                   │ │
+│ │                 │   │   schema_patch=None                                                    │ │
+│ │                 │   ),                                                                       │ │
+│ │                 │   package=None,                                                            │ │
+│ │                 │   stats=ResourceStats(                                                     │ │
+│ │                 │   │   md5=None,                                                            │ │
+│ │                 │   │   sha256=None,                                                         │ │
+│ │                 │   │   bytes=49152,                                                         │ │
+│ │                 │   │   fields=33,                                                           │ │
+│ │                 │   │   rows=None                                                            │ │
+│ │                 │   )                                                                        │ │
+│ │                 )                                                                            │ │
+│ ╰──────────────────────────────────────────────────────────────────────────────────────────────╯ │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
+Exception

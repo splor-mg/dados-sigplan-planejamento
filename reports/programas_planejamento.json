@@ -1,0 +1,62 @@
+{
+  "valid": true,
+  "stats": {
+    "tasks": 1,
+    "errors": 0,
+    "warnings": 0,
+    "seconds": 0.145
+  },
+  "warnings": [],
+  "errors": [],
+  "tasks": [
+    {
+      "name": "programas_planejamento",
+      "type": "table",
+      "valid": true,
+      "place": "data/programas_planejamento.csv",
+      "labels": [
+        "codigo_do_programa",
+        "nome_do_programa",
+        "exclusao_logica_do_programa",
+        "programa_novo",
+        "codigo_da_area_tematica",
+        "area_tematica",
+        "codigo_do_objetivo_estrategico",
+        "objetivo_estrategico",
+        "codigo_da_diretriz_estrategica",
+        "diretriz_estrategica",
+        "justificativa_de_inclusao_ou_exclusao_do_programa",
+        "codigo_do_orgao_responsavel_pelo_programa",
+        "orgao_responsavel_pelo_programa",
+        "codigo_da_unidade_orcamentaria_responsavel_pelo_programa",
+        "unidade_orcamentaria_responsavel_pelo_programa",
+        "objetivo",
+        "justificativa",
+        "tipo_de_programa",
+        "horizonte_temporal",
+        "estrategia_de_implementacao",
+        "unidade_administrativa_responsavel_pelo_programa",
+        "previsao_orcamentaria_2023",
+        "previsao_orcamentaria_2024",
+        "previsao_orcamentaria_2025",
+        "previsao_orcamentaria_2026",
+        "programa_transposto",
+        "causas",
+        "titulo_do_objetivo_de_desenvolvimento_sustentavel",
+        "subtitulo_do_objetivo_de_desenvolvimento_sustentavel"
+      ],
+      "stats": {
+        "errors": 0,
+        "warnings": 0,
+        "seconds": 0.142,
+        "md5": "2f29bb7f64bf64cb0ed09aa9a7b9ca8c",
+        "sha256": "eed992caa4feacafaea6f3b5bd75560f58f5b9171215890c1bc32601c5f4a858",
+        "bytes": 6643953,
+        "fields": 29,
+        "rows": 2515
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

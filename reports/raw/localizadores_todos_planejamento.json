@@ -1,0 +1,66 @@
+{
+  "valid": true,
+  "stats": {
+    "tasks": 1,
+    "errors": 0,
+    "warnings": 0,
+    "seconds": 0.78
+  },
+  "warnings": [],
+  "errors": [],
+  "tasks": [
+    {
+      "name": "localizadores_todos_planejamento",
+      "type": "table",
+      "valid": true,
+      "place": "data/raw/localizadores_todos_planejamento.txt",
+      "labels": [
+        "Código do Programa",
+        "Nome do Programa",
+        "Código da Área Temática",
+        "Área Temática",
+        "Exclusão Lógica do Programa",
+        "Código da Ação",
+        "Título da Ação",
+        "Código do Identificador de Ação Governamental (IAG)",
+        "Identificador de Ação Governamental (IAG)",
+        "Código do Projeto Estratégico",
+        "Projeto Estratégico",
+        "Código da Função",
+        "Função",
+        "Código da Subfunção",
+        "SubFunção",
+        "Código da Unidade Orçamentária Responsável pela Ação",
+        "Unidade Orçamentária Responsável pela Ação",
+        "Exclusão Lógica da Ação",
+        "Código do Localizador",
+        "Exclusão Lógica do Localizador",
+        "Código da Região Geográfica Intermediária",
+        "Região Geográfica Intermediária",
+        "Código do Município IBGE",
+        "Código do Município Sigplan",
+        "Município",
+        "Previsão Orçamentária 2023",
+        "Previsão Física 2023",
+        "Previsão Orçamentária 2024",
+        "Previsão Física 2024",
+        "Previsão Orçamentária 2025",
+        "Previsão Física 2025",
+        "Previsão Orçamentária 2026",
+        "Previsão Física 2026"
+      ],
+      "stats": {
+        "errors": 0,
+        "warnings": 0,
+        "seconds": 0.78,
+        "md5": "be7d7a377cc37a7caeaa3c168299bcac",
+        "sha256": "f14cbc4594fac0fa0672576e7c4120907577e055ad7abb46df59f21b1a16c3a2",
+        "bytes": 15966726,
+        "fields": 33,
+        "rows": 45405
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

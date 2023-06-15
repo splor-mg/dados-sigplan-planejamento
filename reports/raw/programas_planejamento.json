@@ -1,0 +1,62 @@
+{
+  "valid": true,
+  "stats": {
+    "tasks": 1,
+    "errors": 0,
+    "warnings": 0,
+    "seconds": 0.125
+  },
+  "warnings": [],
+  "errors": [],
+  "tasks": [
+    {
+      "name": "programas_planejamento",
+      "type": "table",
+      "valid": true,
+      "place": "data/raw/programas_planejamento.txt",
+      "labels": [
+        "Código do Programa",
+        "Nome do Programa",
+        "Exclusão Lógica do Programa",
+        "Programa Novo",
+        "Código da Área Temática",
+        "Área Temática",
+        "Código do Objetivo Estratégico",
+        "Objetivo Estratégico",
+        "Código da Diretriz Estratégica",
+        "Diretriz Estratégica",
+        "Justificativa de Inclusão ou Exclusão do Programa",
+        "Código do Órgão Responsável pelo Programa",
+        "Órgão Responsável pelo Programa",
+        "Código da Unidade Orçamentária Responsável pelo Programa",
+        "Unidade Orçamentária Responsável pelo Programa",
+        "Objetivo",
+        "Justificativa",
+        "Tipo de Programa",
+        "Horizonte Temporal",
+        "Estratégia de Implementação",
+        "Unidade Administrativa Responsável pelo Programa",
+        "Previsão Orçamentária 2023",
+        "Previsão Orçamentária 2024",
+        "Previsão Orçamentária 2025",
+        "Previsão Orçamentária 2026",
+        "Programa Transposto",
+        "Causas",
+        "Título do Objetivo de Desenvolvimento Sustentável",
+        "Subtítulo do Objetivo de Desenvolvimento Sustentável"
+      ],
+      "stats": {
+        "errors": 0,
+        "warnings": 0,
+        "seconds": 0.125,
+        "md5": "c41b7c67f9ba75d1d84aca5fe3ef9f0d",
+        "sha256": "8653b3eb6a6df02ad623b292248b69ab212189829ac54c2492cb18bc6c9c9142",
+        "bytes": 6368806,
+        "fields": 29,
+        "rows": 2515
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

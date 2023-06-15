@@ -1,0 +1,66 @@
+{
+  "valid": true,
+  "stats": {
+    "tasks": 1,
+    "errors": 0,
+    "warnings": 0,
+    "seconds": 0.74
+  },
+  "warnings": [],
+  "errors": [],
+  "tasks": [
+    {
+      "name": "localizadores_todos_planejamento",
+      "type": "table",
+      "valid": true,
+      "place": "data/localizadores_todos_planejamento.csv",
+      "labels": [
+        "codigo_do_programa",
+        "nome_do_programa",
+        "codigo_da_area_tematica",
+        "area_tematica",
+        "exclusao_logica_do_programa",
+        "codigo_da_acao",
+        "titulo_da_acao",
+        "codigo_do_identificador_de_acao_governamental_iag",
+        "identificador_de_acao_governamental_iag",
+        "codigo_do_projeto_estrategico",
+        "projeto_estrategico",
+        "codigo_da_funcao",
+        "funcao",
+        "codigo_da_subfuncao",
+        "sub_funcao",
+        "codigo_da_unidade_orcamentaria_responsavel_pela_acao",
+        "unidade_orcamentaria_responsavel_pela_acao",
+        "exclusao_logica_da_acao",
+        "codigo_do_localizador",
+        "exclusao_logica_do_localizador",
+        "codigo_da_regiao_geografica_intermediaria",
+        "regiao_geografica_intermediaria",
+        "codigo_do_municipio_ibge",
+        "codigo_do_municipio_sigplan",
+        "municipio",
+        "previsao_orcamentaria_2023",
+        "previsao_fisica_2023",
+        "previsao_orcamentaria_2024",
+        "previsao_fisica_2024",
+        "previsao_orcamentaria_2025",
+        "previsao_fisica_2025",
+        "previsao_orcamentaria_2026",
+        "previsao_fisica_2026"
+      ],
+      "stats": {
+        "errors": 0,
+        "warnings": 0,
+        "seconds": 0.738,
+        "md5": "9913ca6aea2b22d2009c0cf9b4c9d6ed",
+        "sha256": "a9f916c05ea3a938888d590fae1ea02ba1653719142ecfe3d4ab360c95548b5e",
+        "bytes": 16601585,
+        "fields": 33,
+        "rows": 45405
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

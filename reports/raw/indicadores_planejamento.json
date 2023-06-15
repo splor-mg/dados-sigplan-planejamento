@@ -1,0 +1,59 @@
+{
+  "valid": true,
+  "stats": {
+    "tasks": 1,
+    "errors": 0,
+    "warnings": 0,
+    "seconds": 0.051
+  },
+  "warnings": [],
+  "errors": [],
+  "tasks": [
+    {
+      "name": "indicadores_planejamento",
+      "type": "table",
+      "valid": true,
+      "place": "data/raw/indicadores_planejamento.txt",
+      "labels": [
+        "Código do Programa",
+        "Nome do Programa",
+        "Exclusão Lógica do Programa",
+        "Indicador",
+        "Exclusão Lógica do Indicador",
+        "Unidade de Medida",
+        "Índice de Referência",
+        "Em apuração? (Índice de Referência)",
+        "Data de Apuração",
+        "Previsão para 2023",
+        "Em apuração? (2023)",
+        "Previsão para 2024",
+        "Em apuração? (2024)",
+        "Previsão para 2025",
+        "Em apuração? (2025)",
+        "Previsão para 2026",
+        "Em apuração? (2026)",
+        "Fonte",
+        "Periodicidade",
+        "Base Geográfica",
+        "Fórmula de Cálculo",
+        "Justificativa do Status em apuração da(s) Previsão(es) do(s) Índice(s)",
+        "Justificativa do Status em apuração do Índice de Referência",
+        "Data Alteração",
+        "Indicador Novo?",
+        "Polaridade"
+      ],
+      "stats": {
+        "errors": 0,
+        "warnings": 0,
+        "seconds": 0.051,
+        "md5": "9e99b22048ce7c8cac8ac2b27a314955",
+        "sha256": "cb4b1d2ed172eb83d7d017b8c12182d28aa4b04044c50245df80f8eac172f192",
+        "bytes": 107320,
+        "fields": 26,
+        "rows": 251
+      },
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}
