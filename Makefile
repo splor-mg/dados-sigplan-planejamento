@@ -1,6 +1,6 @@
 .PHONY: infer extract ingest validate-raw transform validate build all clean print
 
-RESOURCES := $(basename $(notdir $(wildcard data/staging/*.txt)))
+RESOURCES := $(shell yq e '.resources[].name' datapackage.yaml)
 STAGING_LOG_FILES := $(addsuffix .txt,$(addprefix logs/data/staging/,$(RESOURCES)))
 INGEST_FILES := $(addsuffix .txt,$(addprefix data/raw/,$(RESOURCES)))
 REPORTS_RAW := $(addsuffix .json,$(addprefix reports/raw/,$(RESOURCES)))
