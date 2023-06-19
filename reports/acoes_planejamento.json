@@ -4,7 +4,7 @@
     "tasks": 1,
     "errors": 0,
     "warnings": 0,
-    "seconds": 0.079
+    "seconds": 0.081
   },
   "warnings": [],
   "errors": [],
@@ -15,15 +15,15 @@
       "valid": true,
       "place": "data/acoes_planejamento.csv",
       "labels": [
-        "codigo_do_programa",
-        "nome_do_programa",
+        "programa_cod",
+        "programa_desc",
         "codigo_da_area_tematica",
         "area_tematica",
         "exclusao_logica_do_programa",
         "programa_novo",
         "justificativa_de_inclusao_ou_exclusao_do_programa",
-        "codigo_da_unidade_orcamentaria_responsavel_pelo_programa",
-        "unidade_orcamentaria_responsavel_pelo_programa",
+        "uo_programa_cod",
+        "uo_programa_desc",
         "codigo_da_unidade_orcamentaria_responsavel_pela_acao",
         "unidade_orcamentaria_responsavel_pela_acao",
         "codigo_da_funcao",
@@ -67,10 +67,10 @@
       "stats": {
         "errors": 0,
         "warnings": 0,
-        "seconds": 0.077,
-        "md5": "60c09afcb34d46bb8e9e25244adcde84",
-        "sha256": "8cf46c2d68f7321421848b3c4f0a4b425dd3c8df157ac48044f6a0a37643587f",
-        "bytes": 1994838,
+        "seconds": 0.078,
+        "md5": "c0b1983db198347965a640e20f9da714",
+        "sha256": "977148518856bc8c9b123a63eb99a4d9f6c071514f717257912eecf122ac6a85",
+        "bytes": 1995722,
         "fields": 48,
         "rows": 963
       },

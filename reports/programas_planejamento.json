@@ -4,7 +4,7 @@
     "tasks": 1,
     "errors": 0,
     "warnings": 0,
-    "seconds": 0.145
+    "seconds": 0.141
   },
   "warnings": [],
   "errors": [],
@@ -15,8 +15,8 @@
       "valid": true,
       "place": "data/programas_planejamento.csv",
       "labels": [
-        "codigo_do_programa",
-        "nome_do_programa",
+        "programa_cod",
+        "programa_desc",
         "exclusao_logica_do_programa",
         "programa_novo",
         "codigo_da_area_tematica",
@@ -48,10 +48,10 @@
       "stats": {
         "errors": 0,
         "warnings": 0,
-        "seconds": 0.142,
-        "md5": "2f29bb7f64bf64cb0ed09aa9a7b9ca8c",
-        "sha256": "eed992caa4feacafaea6f3b5bd75560f58f5b9171215890c1bc32601c5f4a858",
-        "bytes": 6643953,
+        "seconds": 0.138,
+        "md5": "becf87fb75026a8fe048811ab3e76746",
+        "sha256": "0dc1e0145236e034bcb1c27b77849e8412a2d6123096215f9508fcc2f5f681f0",
+        "bytes": 6646604,
         "fields": 29,
         "rows": 2515
       },

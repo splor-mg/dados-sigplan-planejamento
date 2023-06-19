@@ -4,7 +4,7 @@
     "tasks": 1,
     "errors": 0,
     "warnings": 0,
-    "seconds": 0.74
+    "seconds": 0.743
   },
   "warnings": [],
   "errors": [],
@@ -52,10 +52,10 @@
       "stats": {
         "errors": 0,
         "warnings": 0,
-        "seconds": 0.738,
-        "md5": "9913ca6aea2b22d2009c0cf9b4c9d6ed",
-        "sha256": "a9f916c05ea3a938888d590fae1ea02ba1653719142ecfe3d4ab360c95548b5e",
-        "bytes": 16601585,
+        "seconds": 0.74,
+        "md5": "3f0c6350a2a6f1cdc94d0a5bc7cdf32f",
+        "sha256": "c9898687ba01a3e5605a92740b3792b9b03b498fa07f9cafeb1be66ce11e8845",
+        "bytes": 16646991,
         "fields": 33,
         "rows": 45405
       },
