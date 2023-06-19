@@ -4,7 +4,7 @@
     "tasks": 1,
     "errors": 0,
     "warnings": 0,
-    "seconds": 0.125
+    "seconds": 0.124
   },
   "warnings": [],
   "errors": [],
@@ -48,7 +48,7 @@
       "stats": {
         "errors": 0,
         "warnings": 0,
-        "seconds": 0.125,
+        "seconds": 0.124,
         "md5": "c41b7c67f9ba75d1d84aca5fe3ef9f0d",
         "sha256": "8653b3eb6a6df02ad623b292248b69ab212189829ac54c2492cb18bc6c9c9142",
         "bytes": 6368806,
