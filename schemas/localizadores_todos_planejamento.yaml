@@ -13,8 +13,6 @@ fields:
     type: string
   - name: is_deleted_programa
     title: Exclusão Lógica do Programa
-    description: |
-      Identifica se o programa foi excluído do planejamento porém continua existindo na base para critérios de histórico e consolidação.
     type: boolean
   - name: acao_cod
     title: Código da Ação
@@ -54,8 +52,6 @@ fields:
     type: string
   - name: is_deleted_acao
     title: Exclusão Lógica da Ação
-    description: |
-      Identifica se a ação foi excluído do planejamento porém continua existindo na base para critérios de histórico e consolidação.
     type: boolean
   - name: localizador_cod
     title: Código do Localizador
