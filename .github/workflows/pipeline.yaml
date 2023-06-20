@@ -3,6 +3,7 @@ name: Update data package
 on:
   schedule:
     - cron:  '13 10 * * *'
+  workflow_dispatch:
 
 jobs:
   scrape:
