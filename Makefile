@@ -26,5 +26,5 @@ checks-python:
 
 publish: 
 	git add -Af data/*.csv
-	git commit --author="Automated <actions@users.noreply.github.com>" -m "Update data package" || exit 0
+	git commit --author="Automated <actions@users.noreply.github.com>" -m "Update data package at: $$(date +%Y-%m-%dT%H:%M:%SZ)" || exit 0
 	git push
