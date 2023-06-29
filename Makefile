@@ -14,7 +14,7 @@ extract:
 transform: $(OUTPUT_FILES)
 
 $(OUTPUT_FILES): $(OUTPUT_DIR)/%.csv: $(INPUT_DIR)/%.$(EXT) schemas/%.yaml scripts/transform.py datapackage.yaml
-	python scripts/transform.py $*
+	python scripts/transform.py $* $@
 
 check: checks-python
 
