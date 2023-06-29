@@ -2,7 +2,6 @@ from frictionless import Package
 import requests
 from bs4 import BeautifulSoup
 import logging
-import typer
 import shutil
 from datetime import datetime
 import re
@@ -10,7 +9,7 @@ import pytz
 
 logger = logging.getLogger(__name__)
 
-def main(resource_name: str, descriptor: str = 'datapackage.yaml'):
+def extract_resource(resource_name: str, descriptor: str = 'datapackage.yaml'):
     package = Package(descriptor)
     resource = package.get_resource(resource_name)
 
@@ -54,9 +53,3 @@ def main(resource_name: str, descriptor: str = 'datapackage.yaml'):
     
     with open(resource.path, 'wb') as file:
         shutil.copyfileobj(res.raw, file)
-
-if __name__ == '__main__':
-    LOG_FORMAT = '%(asctime)s %(levelname)-5.5s [%(name)s] %(message)s'
-    LOG_DATE_FORMAT = '%Y-%m-%dT%H:%M:%S%z'
-    logging.basicConfig(format=LOG_FORMAT, datefmt=LOG_DATE_FORMAT, level=logging.INFO)
-    typer.run(main)
