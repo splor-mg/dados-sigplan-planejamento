@@ -2,7 +2,7 @@ name: ppag2023-dadosmg
 resources:
   - name: acoes_planejamento
     title: Relatórios e Bases do Planejamento - Ações
-    path: data/raw/acoes_planejamento.txt
+    path: data-raw/acoes_planejamento.txt
     api_url: https://www.sigplan.mg.gov.br/v4/Relatorios/base_programas_planejamento.asp?tipo_saida=2&mostraSQL=N&periodo=undefined
     download_url: https://www.sigplan.mg.gov.br/BasesTxt/acoes_planejamento.txt
     format: csv
@@ -21,7 +21,7 @@ resources:
         schema: schemas/raw/acoes_planejamento.yaml
   - name: indicadores_planejamento
     title: Relatórios e Bases do Planejamento - Indicadores
-    path: data/raw/indicadores_planejamento.txt
+    path: data-raw/indicadores_planejamento.txt
     api_url: https://www.sigplan.mg.gov.br/v4/Relatorios/base_indicadores_planejamento.asp?tipo_saida=2&mostraSQL=N&periodo=undefined
     download_url: https://www.sigplan.mg.gov.br/BasesTxt/indicadores_planejamento.txt
     format: csv
@@ -40,7 +40,7 @@ resources:
         schema: schemas/raw/indicadores_planejamento.yaml
   - name: localizadores_todos_planejamento
     title: Relatórios e Bases do Planejamento - Localizadores (Todos)
-    path: data/raw/localizadores_todos_planejamento.txt
+    path: data-raw/localizadores_todos_planejamento.txt
     api_url: https://www.sigplan.mg.gov.br/v4/Relatorios/base_localizadores_planejamento.asp?tipo_saida=2&mostraSQL=N&tipo_rel=5&periodo=undefined
     download_url: https://www.sigplan.mg.gov.br/BasesTxt/localizadores_Todos_planejamento.txt
     format: csv
@@ -59,7 +59,7 @@ resources:
         schema: schemas/raw/localizadores_todos_planejamento.yaml
   - name: programas_planejamento
     title: Relatórios e Bases do Planejamento - Programas
-    path: data/raw/programas_planejamento.txt
+    path: data-raw/programas_planejamento.txt
     api_url: https://www.sigplan.mg.gov.br/v4/Relatorios/base_programas_planejamento.asp?tipo_saida=2&mostraSQL=N&periodo=undefined
     download_url: https://www.sigplan.mg.gov.br/BasesTxt/programas_planejamento.txt
     format: csv
