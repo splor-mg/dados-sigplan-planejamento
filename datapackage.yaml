@@ -12,9 +12,7 @@ resources:
         download_url: https://www.sigplan.mg.gov.br/BasesTxt/acoes_planejamento.txt
         format: csv
         encoding: windows-1252
-        dialect:
-          csv:
-            delimiter: '|'
+        dialect: dialect.yaml
         schema: schemas/raw/acoes_planejamento.yaml
   - name: indicadores_planejamento
     path: data/indicadores_planejamento.csv
@@ -28,9 +26,7 @@ resources:
         download_url: https://www.sigplan.mg.gov.br/BasesTxt/indicadores_planejamento.txt
         format: csv
         encoding: windows-1252
-        dialect:
-          csv:
-            delimiter: '|'
+        dialect: dialect.yaml
         schema: schemas/raw/indicadores_planejamento.yaml
   - name: localizadores_todos_planejamento
     path: data/localizadores_todos_planejamento.csv
@@ -44,9 +40,7 @@ resources:
         download_url: https://www.sigplan.mg.gov.br/BasesTxt/localizadores_Todos_planejamento.txt
         format: csv
         encoding: windows-1252
-        dialect:
-          csv:
-            delimiter: '|'
+        dialect: dialect.yaml
         schema: schemas/raw/localizadores_todos_planejamento.yaml
   - name: programas_planejamento
     path: data/programas_planejamento.csv
@@ -60,7 +54,5 @@ resources:
         download_url: https://www.sigplan.mg.gov.br/BasesTxt/programas_planejamento.txt
         format: csv
         encoding: windows-1252
-        dialect:
-          csv:
-            delimiter: '|'
+        dialect: dialect.yaml
         schema: schemas/raw/programas_planejamento.yaml
