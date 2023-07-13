@@ -19,7 +19,7 @@ $(OUTPUT_FILES): logs/transform/%.json: data-raw/%.$(EXT) schemas/%.yaml scripts
 
 build: transform datapackage.json
 
-datapackage.json: $(OUTPUT_FILES)
+datapackage.json: $(OUTPUT_FILES) scripts/build.py datapackage.yaml
 	python main.py build
 
 check:

@@ -20,8 +20,6 @@ def build_package(source_descriptor: str = 'datapackage.yaml', target_descriptor
         ]
     })
     
-    target.transform(build_pipeline)
-    target.custom['updated_at'] = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
     output = target.to_dict()
     for resource_name in target.resource_names:
         resource_descriptor = Resource(f'logs/transform/{resource_name}.json').to_descriptor()
@@ -30,4 +28,7 @@ def build_package(source_descriptor: str = 'datapackage.yaml', target_descriptor
         for resource in output['resources']
     ]
     
-    Package.from_descriptor(output).to_json(target_descriptor)
+    package = Package.from_descriptor(output)
+    package.custom['updated_at'] = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
+    package.transform(build_pipeline)
+    package.to_json(target_descriptor)
