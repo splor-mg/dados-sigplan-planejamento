@@ -6,7 +6,10 @@ OUTPUT_DIR = data
 RESOURCE_NAMES := $(shell python main.py resources)
 OUTPUT_FILES := $(addsuffix .csv,$(addprefix $(OUTPUT_DIR)/,$(RESOURCE_NAMES)))
 
-all: extract transform build validate
+all: init extract transform build validate
+
+init: 
+	python main.py init
 
 extract: 
 	$(foreach resource_name, $(RESOURCE_NAMES),python main.py extract $(resource_name) &&) true
@@ -14,7 +17,7 @@ extract:
 transform: $(OUTPUT_FILES)
 
 $(OUTPUT_FILES): $(OUTPUT_DIR)/%.csv: $(INPUT_DIR)/%.$(EXT) schemas/%.yaml scripts/transform.py datapackage.yaml
-	python main.py transform $* $@
+	python main.py transform $*
 
 build: transform
 	python main.py build $(OUTPUT_DIR)

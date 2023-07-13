@@ -3,3 +3,4 @@ venv/
 .Rproj.user
 data/
 data-raw/
+datapackage.json
