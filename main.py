@@ -1,7 +1,6 @@
 from frictionless import Package
 import typer
 import logging
-from scripts.init import init_package
 from scripts.extract import extract_resource
 from scripts.transform import transform_resource
 from scripts.build import build_package
@@ -24,8 +23,6 @@ def resources(descriptor: str = 'datapackage.yaml'):
     print(output)
     return 0
 
-
-app.command(name="init")(init_package)
 app.command(name="extract")(extract_resource)
 app.command(name="transform")(transform_resource)
 app.command(name="build")(build_package)
