@@ -1,8 +1,6 @@
-from frictionless import Package, steps, transform
+from frictionless import Package
 import logging
-from pathlib import Path
 from scripts.pipelines import transform_pipeline
-import json
 
 logger = logging.getLogger(__name__)
 
