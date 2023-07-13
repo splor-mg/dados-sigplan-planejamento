@@ -1,13 +1,10 @@
-.PHONY: all init extract validate transform build check publish clean
+.PHONY: all extract validate transform build check publish clean
 
 EXT = txt
 RESOURCE_NAMES := $(shell python main.py resources)
-OUTPUT_FILES := $(addsuffix .csv,$(addprefix data/,$(RESOURCE_NAMES)))
+OUTPUT_FILES := $(addsuffix .json,$(addprefix logs/transform/,$(RESOURCE_NAMES)))
 
-all: init extract validate transform build check
-
-init:
-	python main.py init
+all: extract validate transform build check
 
 extract: 
 	$(foreach resource_name, $(RESOURCE_NAMES),python main.py extract $(resource_name) &&) true
@@ -15,10 +12,14 @@ extract:
 validate: 
 	frictionless validate datapackage.yaml
 
-transform:
-	$(foreach resource_name, $(RESOURCE_NAMES),python main.py transform $(resource_name) &&) true
+transform: $(OUTPUT_FILES)
 
-build:
+$(OUTPUT_FILES): logs/transform/%.json: data-raw/%.$(EXT) schemas/%.yaml scripts/transform.py datapackage.yaml
+	python main.py transform $* --target-descriptor $@
+
+build: transform datapackage.json
+
+datapackage.json: $(OUTPUT_FILES)
 	python main.py build
 
 check:
@@ -30,4 +31,4 @@ publish:
 	git push
 
 clean:
-	rm -f datapackage.json data/*.csv
+	rm -f datapackage.json data/*.csv logs/transform/*.json
