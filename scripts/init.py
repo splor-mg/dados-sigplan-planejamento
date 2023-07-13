@@ -5,7 +5,6 @@ def init_package(source_descriptor: str = 'datapackage.yaml', target_descriptor:
     package = Package(source_descriptor)
 
     descriptor = {
-        "profile": "tabular-data-package",
         "name": package.name,
         "resources": [
             {
