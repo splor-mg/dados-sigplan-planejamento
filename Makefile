@@ -10,7 +10,7 @@ extract:
 	$(foreach resource_name, $(RESOURCE_NAMES),python main.py extract $(resource_name) &&) true
 
 validate: 
-	frictionless validate datapackage.yaml
+	python main.py validate datapackage.yaml
 
 transform: $(OUTPUT_FILES)
 
