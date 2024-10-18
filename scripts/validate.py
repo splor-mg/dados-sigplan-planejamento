@@ -5,10 +5,10 @@ from frictionless import validate
 
 logger = logging.getLogger(__name__)
 
-def validate_package(descriptor, stop_on_failure: bool = False):
-    package = Package('datapackage.yaml')
+def validate_package(descriptor: str, stop_on_failure: bool = False):
+    package = Package(descriptor)
     
-    report = validate('datapacakge.yaml')
+    report = validate(descriptor)
 
     report_fields = ['title', 'rowNumber', 'fieldNumber', 'fieldName', 'description', 'message', 'note']
     errors = [['resource'] + report_fields]
@@ -31,5 +31,5 @@ def validate_package(descriptor, stop_on_failure: bool = False):
         if stop_on_failure == True: 
             raise Exception(errors)
 
-    return(errors)
-    
+    return errors
+   
